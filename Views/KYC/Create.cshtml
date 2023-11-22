@@ -1,0 +1,30 @@
+@model KYC
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Create</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="UAccUsername"></label>
+			<input asp-for="UAccUsername" class="form-control" />
+			<span asp-validation-for="UAccUsername" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="UAccPassword"></label>
+			<input asp-for="UAccPassword" class="form-control" />
+			<span asp-validation-for="UAccPassword" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+		<a asp-controller="KYC" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
