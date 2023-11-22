@@ -8,7 +8,9 @@ public class KYC
      
     [Required]
     public string? UAccUsername { get; set; }
-    public string? UAccPassword { get; set; }
-    
+
+    public string? UAccPhoneNumber { get; set; }
+
+
    
 }
