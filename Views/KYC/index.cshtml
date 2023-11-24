@@ -2,7 +2,16 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<style> 
+    .dd{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: auto;
+        
+    }
+</style>
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
@@ -21,19 +30,20 @@
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
-             <th>
+            
+             <th class="dd">
                ID
 			</th>
-            <th>
+            <th >
                Username
 			</th>
-            <th>
+            <th >
                 Password
 			</th>
-            <th>
+            <th >
                 PhoneNumber
 			</th>
-
+        
 		</tr>
 	</thead>
     <tbody>
@@ -47,7 +57,7 @@
                     @obj.UAccUsername
 				</td>
                  <td width="50%">
-                    @obj.UAccPassword
+                    @Convert.ToBase64String(obj.UAccPassword)
 				</td>
                  <td width="30%">
                     @obj.UAccPhoneNumber
