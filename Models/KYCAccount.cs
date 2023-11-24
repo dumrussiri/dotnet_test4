@@ -11,6 +11,23 @@ public class KYC
 
     public string? UAccPhoneNumber { get; set; }
 
+    public byte[]? UAccPassword {get; set;} 
+   public string GetPasswordAsHex()
+    {
+        if (UAccPassword != null)
+        {
+            return BitConverter.ToString(UAccPassword).Replace("-", "");
+        }
+        return string.Empty;
+    }
 
-   
+    // Method to convert byte array to Base64 string
+    public string GetPasswordAsBase64()
+    {
+        if (UAccPassword != null)
+        {
+            return Convert.ToBase64String(UAccPassword);
+        }
+        return string.Empty;
+    }
 }
